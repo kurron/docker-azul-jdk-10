@@ -2,7 +2,7 @@
 This project is a simple Docker image that provides access to the
 [Azul Systems JDK](http://www.azul.com/downloads/zulu/).  It is intended
 for **running** JVM applications, not building and testing them. If you
-need to build a JVM application, [look at this project](https://github.com/kurron/docker-azul-jdk-9-build).
+need to build a JVM application, [look at this project](https://github.com/kurron/docker-azul-jdk-10-build).
 
 
 # Prerequisites
@@ -31,7 +31,7 @@ to your image.
 
 The `Dockerfile`:
 ```
-FROM kurron/docker-azul-jdk-9:latest
+FROM kurron/docker-azul-jdk-10:latest
 
 MAINTAINER Ron Kurr <kurr@kurron.org>
 
@@ -103,7 +103,7 @@ You can control how much CPU and RAM the container see via Docker's
 ## Observed JVM Memory Behavior
 Using [VisualVM](https://visualvm.github.io/) I was able to watch the JVM's heap
 and have the following observations. Test were run with
-`OpenJDK 64-Bit Server VM (Zulu build 9.0.4.1+11, mixed mode)`.
+`OpenJDK 64-Bit Server VM Zulu10.1+11 (build 10+46, mixed mode)`.
 
 1. Docker's `--memory` switch sets the cgroup settings
 1. `exec` into a container and run `mount | grep cgroup | grep memory`, `more /sys/fs/cgroup/memory/memory.limit_in_bytes` to see the cgroup value
@@ -136,4 +136,4 @@ This project is licensed under the
 # List of Changes
 
 * removed Docker, Docker Compose and Ansible from the image. Use the build image instead.
-* update to OpenJDK 64-Bit Server VM (Zulu build 9.0.4.1+11, mixed mode) 
+* OpenJDK 64-Bit Server VM Zulu10.1+11 (build 10+46, mixed mode) 
