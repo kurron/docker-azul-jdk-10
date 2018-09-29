@@ -17,6 +17,9 @@ Docker will automatically install the newly built image into the cache.
 
 # Tips and Tricks
 
+## Docker Support
+JDK 10 has better support for Docker as [explained in this post](https://blog.docker.com/2018/04/improved-docker-container-integration-with-java-10/).  In short, you no longer need to set experimental flags to restrict the JVM's resource usage. See `examples/showcase-docker-support` for examples that show this.
+
 ## Launching The Image
 Use `./test.sh` to exercise the image.  
 
@@ -135,5 +138,6 @@ This project is licensed under the
 
 # List of Changes
 
+* showcase how the JVM now respects Docker settings.
 * removed Docker, Docker Compose and Ansible from the image. Use the build image instead.
-* OpenJDK 64-Bit Server VM Zulu10.1+11 (build 10+46, mixed mode) 
+* OpenJDK 64-Bit Server VM Zulu10.1+11 (build 10+46, mixed mode)

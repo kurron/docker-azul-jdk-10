@@ -1,0 +1,4 @@
+multi-core-jdk:
+    build: .
+    container_name: "docker-showcase-jdk"
+    net: "host"
